@@ -37,12 +37,17 @@ import {
   CodeXml,
   Clapperboard,
   PenTool,
+  Mail,
+  Check,
 } from "lucide-react";
 
 export default function NavBar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState(null); // "usecases" | "agents" | "integrations" | "resources"
   const [activeStoryIdx, setActiveStoryIdx] = useState(0);
+  const [trialEmailOpen, setTrialEmailOpen] = useState(false);
+  const [navEmail, setNavEmail] = useState("");
+  const [navSubmitted, setNavSubmitted] = useState(false);
   const navRef = useRef(null);
   const timeoutRef = useRef(null);
 
@@ -878,14 +883,65 @@ export default function NavBar() {
           </div>
         </div>
 
-        {/* Right CTA Button (matching reference 'Start free trial') */}
+        {/* Right CTA Button with Email Input on Click */}
         <div className="hidden md:flex items-center gap-3">
-          <a
-            href="#analyze"
-            className="inline-flex items-center gap-1.5 text-sm font-semibold px-4 py-2 rounded-full bg-[#ffffff] text-[#000000] hover:bg-[#e4e4e7] transition-all hover:shadow-[0_0_20px_rgba(255,255,255,0.35)] cursor-pointer"
-          >
-            <span>Start free trial</span>
-          </a>
+          {!trialEmailOpen ? (
+            <button
+              onClick={() => setTrialEmailOpen(true)}
+              className="inline-flex items-center gap-1.5 text-sm font-semibold px-4 py-2 rounded-full bg-[#ffffff] text-[#000000] hover:bg-[#e4e4e7] transition-all hover:shadow-[0_0_20px_rgba(255,255,255,0.35)] cursor-pointer"
+            >
+              <span>Start free trial</span>
+            </button>
+          ) : navSubmitted ? (
+            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold animate-fadeIn">
+              <Check className="w-3.5 h-3.5" />
+              <span>Trial link sent to {navEmail || "your inbox"}!</span>
+            </div>
+          ) : (
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                if (navEmail.trim()) {
+                  setNavSubmitted(true);
+                  setTimeout(() => {
+                    setNavSubmitted(false);
+                    setTrialEmailOpen(false);
+                    setNavEmail("");
+                  }, 3500);
+                }
+              }}
+              className="flex items-center rounded-full border border-[#3f3f46] bg-[#141416] p-1 pl-3 shadow-[0_0_20px_rgba(0,0,0,0.6)] focus-within:border-[#ffffff] transition-all animate-fadeIn"
+            >
+              <Mail className="w-3.5 h-3.5 text-[#a1a1aa] shrink-0 mr-1.5" />
+              <input
+                type="email"
+                autoFocus
+                required
+                value={navEmail}
+                onChange={(e) => setNavEmail(e.target.value)}
+                placeholder="Enter your email id"
+                className="bg-transparent text-xs text-white placeholder-[#71717a] focus:outline-none w-44 sm:w-48 py-1"
+              />
+              <button
+                type="submit"
+                className="px-3 py-1.5 rounded-full bg-white text-black font-semibold text-xs hover:bg-[#e4e4e7] transition-all shrink-0 flex items-center gap-1 cursor-pointer"
+              >
+                <span>Start</span>
+                <ArrowRight className="w-3 h-3" />
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setTrialEmailOpen(false);
+                  setNavEmail("");
+                }}
+                className="p-1 text-[#71717a] hover:text-white rounded-full transition-colors ml-0.5 cursor-pointer"
+                title="Cancel"
+              >
+                <X className="w-3.5 h-3.5" />
+              </button>
+            </form>
+          )}
         </div>
 
         {/* Mobile Menu Button */}
@@ -1006,13 +1062,61 @@ export default function NavBar() {
           </Link>
 
           <div className="pt-2">
-            <a
-              href="#analyze"
-              onClick={() => setMobileMenuOpen(false)}
-              className="w-full text-center py-2.5 text-sm font-semibold rounded-full bg-[#ffffff] text-[#000000] block"
-            >
-              Start free trial →
-            </a>
+            {!trialEmailOpen ? (
+              <button
+                onClick={() => setTrialEmailOpen(true)}
+                className="w-full text-center py-2.5 text-sm font-semibold rounded-full bg-[#ffffff] text-[#000000] block cursor-pointer"
+              >
+                Start free trial →
+              </button>
+            ) : navSubmitted ? (
+              <div className="w-full py-2.5 text-center text-xs font-semibold rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                ✓ Free trial link sent to {navEmail || "your inbox"}!
+              </div>
+            ) : (
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  if (navEmail.trim()) {
+                    setNavSubmitted(true);
+                    setTimeout(() => {
+                      setNavSubmitted(false);
+                      setTrialEmailOpen(false);
+                      setNavEmail("");
+                    }, 3500);
+                  }
+                }}
+                className="flex flex-col gap-2 p-2 rounded-2xl bg-[#141416] border border-[#27272a]"
+              >
+                <div className="flex items-center gap-2 px-3 py-2 rounded-xl bg-[#09090b] border border-[#27272a]">
+                  <Mail className="w-4 h-4 text-[#a1a1aa]" />
+                  <input
+                    type="email"
+                    autoFocus
+                    required
+                    value={navEmail}
+                    onChange={(e) => setNavEmail(e.target.value)}
+                    placeholder="Enter your email id"
+                    className="w-full bg-transparent text-xs text-white placeholder-[#71717a] focus:outline-none"
+                  />
+                </div>
+                <div className="flex items-center gap-2">
+                  <button
+                    type="submit"
+                    className="flex-1 py-2 text-xs font-bold rounded-xl bg-white text-black hover:bg-[#e4e4e7] cursor-pointer"
+                  >
+                    Activate Free Trial →
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setTrialEmailOpen(false)}
+                    className="px-3 py-2 text-xs text-[#a1a1aa] hover:text-white cursor-pointer"
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </form>
+            )}
           </div>
         </div>
       )}

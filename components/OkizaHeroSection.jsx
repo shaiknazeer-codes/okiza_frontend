@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import HeroDashboard from "./HeroDashboard";
 
 export default function OkizaHeroSection() {
   const [website, setWebsite] = useState("");
@@ -189,6 +190,9 @@ export default function OkizaHeroSection() {
           </div>
         </div>
       </div>
+
+      {/* Interactive Hero Dashboard with sidebar: Overview, AI/Visibility, SEO&GEO, Keywords, Competition */}
+      <HeroDashboard />
     </section>
   );
 }
