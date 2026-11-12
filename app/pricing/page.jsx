@@ -14,6 +14,7 @@ import {
   ChevronDown,
   Building2,
   Lock,
+  Bot,
 } from "lucide-react";
 
 export default function PricingPage() {
@@ -22,360 +23,382 @@ export default function PricingPage() {
 
   const plans = [
     {
-      name: "Free",
-      price: "$0",
-      period: "forever",
-      desc: "Everything you need to research and build your initial 30-day marketing strategy.",
-      badge: null,
+      id: "intern",
+      name: "Intern Plan",
+      subtitle: "AI Marketing Intern",
+      badge: "Entry-level",
+      price: annualBilling ? "$39" : "$49",
+      period: annualBilling ? "per month, billed annually" : "per month, billed monthly",
+      annualNote: annualBilling ? "$468 / year (Save 20%)" : null,
+      desc: "An AI agent that handles the foundational SEO, GEO, and AEO work for your business.",
       highlight: false,
-      ctaText: "Analyze Website Free",
+      ctaText: "Start with Intern Plan",
       ctaHref: "/#analyze",
       features: [
-        "Full website crawl & brand graph synthesis",
-        "Product information document",
-        "Positioning & ICP messaging analysis",
-        "Competitor keyword gap overview",
-        "Standard community access",
-        "1 Workspace & 1 User seat",
+        "Complete Website SEO Audit & analysis",
+        "Technical SEO: identify issues & provide fixes",
+        "Keyword Tracking & performance monitoring",
+        "Competitor Analysis & live market tracking",
+        "GEO (Generative Engine Optimization) in AI search",
+        "AEO (Answer Engine Optimization) brand mentions",
+        "Downloadable SEO, GEO & AEO audit reports",
+        "GitHub PR integration for SEO fixes (Branch & PRs)",
+        "WordPress integration & website crawling",
+        "Apply Changes workflow for implementing fixes",
       ],
     },
     {
-      name: "AI CMO Lite",
-      price: annualBilling ? "$108" : "$129",
+      id: "manager",
+      name: "Manager Plan",
+      subtitle: "AI Marketing Manager",
+      badge: "MOST POPULAR • MID-TIER",
+      price: annualBilling ? "$119" : "$149",
       period: annualBilling ? "per month, billed annually" : "per month, billed monthly",
-      annualNote: annualBilling ? "$1,290 / year (Save 2 months)" : null,
-      desc: "For early-stage startups and lean teams building foundational organic traction.",
-      badge: null,
-      highlight: false,
-      ctaText: "Start 7-Day Free Trial",
-      ctaHref: "/#pricing",
-      features: [
-        "Everything in Free, plus:",
-        "SEO Agent (Daily audits & 2 ready fixes)",
-        "GEO Agent (ChatGPT & Perplexity citations)",
-        "X (Twitter) Agent (Viral threads & news radar)",
-        "Influencer Agent (Creator matching & briefs)",
-        "Coding Agent (Automated GitHub pull requests)",
-        "7-Day free trial with full agent access",
-        "Standard email & chat support",
-      ],
-    },
-    {
-      name: "AI CMO Pro",
-      price: annualBilling ? "$208" : "$249",
-      period: annualBilling ? "per month, billed annually" : "per month, billed monthly",
-      annualNote: annualBilling ? "$2,490 / year (Save 2 months)" : null,
-      desc: "Full autonomous marketing fleet for scaling SaaS, ecommerce, and fast-moving teams.",
-      badge: "MOST POPULAR",
+      annualNote: annualBilling ? "$1,428 / year (Save 20%)" : null,
+      desc: "Everything in Intern, plus content creation and external brand visibility across platforms.",
       highlight: true,
       ctaText: "Start 7-Day Free Trial",
       ctaHref: "/#pricing",
       features: [
-        "Everything in AI CMO Lite, plus:",
-        "Reddit Agent (Buyer threads & ban-safe replies)",
-        "LinkedIn Agent (B2B carousels & founder stories)",
-        "AI Content Writer Agent (SEO articles & CMS auto-publish)",
-        "UGC Videos Agent (TikTok & Reels scripts & creator briefs)",
-        "CMS 1-Click Publishing (Webflow, WordPress, Framer, Wix, HubSpot, Sanity)",
-        "Priority 6-hour analytics & ranking refresh",
-        "Priority dedicated support channel",
+        "Everything in the Intern Plan (SEO, GEO, AEO, Keywords, Competitors, Technical SEO)",
+        "Blog Management: blog creation & publishing capabilities",
+        "Third-party Posting: brand visibility on external platforms",
+        "Reddit Integration: discover relevant discussions & threads",
+        "Quora Integration: external discussion & brand visibility",
+        "Medium & External Publishing: content distribution",
+        "Backlinking: third-party posting & backlinking strategy",
+        "LinkedIn Content: social content distribution & carousels",
+        "Brand visibility beyond your own website",
+        "Priority analytics refresh & ranking alerts",
       ],
     },
     {
-      name: "Enterprise",
-      price: "Custom",
-      period: "tailored volume",
-      desc: "For scaling multi-brand organizations, agencies, and high-volume operations.",
-      badge: "CUSTOM FLEET",
+      id: "cmo",
+      name: "CMO Plan",
+      subtitle: "AI Chief Marketing Officer",
+      badge: "PREMIUM • FULL AUTONOMY",
+      price: annualBilling ? "$239" : "$299",
+      period: annualBilling ? "per month, billed annually" : "per month, billed monthly",
+      annualNote: annualBilling ? "$2,868 / year (Save 20%)" : null,
+      desc: "Everything in Manager, plus strategic marketing planning, creative execution, and video generation.",
       highlight: false,
-      ctaText: "Talk to Sales",
-      ctaHref: "/#analyze",
+      ctaText: "Deploy Your AI CMO",
+      ctaHref: "/#pricing",
       features: [
-        "Everything in AI CMO Pro, plus:",
-        "Multi-domain & agency client workspaces",
-        "Custom agent output volume & frequency",
-        "SSO (SAML/Okta) & Role-Based Access Control",
-        "Custom Webhook & API endpoints",
-        "Private Slack & Teams shared channel",
-        "Dedicated Growth Strategist & onboarding",
-        "99.9% Uptime Service Level Agreement (SLA)",
+        "Everything in the Manager Plan",
+        "Marketing Strategies: generate comprehensive business strategies",
+        "Social Media Posts: create promotional & thought leadership posts",
+        "Video Generation: generate marketing videos & UGC ad clips",
+        "Campaign Management: plan, create & launch marketing campaigns",
+        "Brand Growth Strategy: AI-driven recommendations for scaling",
+        "Autonomous AI Marketing Agent for strategic & creative tasks",
+        "Dedicated Growth Strategist review",
+        "Private Slack channel & 99.9% Uptime SLA",
       ],
     },
   ];
 
   const comparisonFeatures = [
     {
-      category: "Strategy & Foundations",
+      category: "Foundations: SEO, GEO & AEO",
       items: [
-        { name: "Website & Brand Voice Ingestion", free: true, lite: true, pro: true, ent: true },
-        { name: "Competitor Market Gap Radar", free: "Basic", lite: true, pro: true, ent: true },
-        { name: "Daily Deliverable Recommendations", free: false, lite: "2 / day", pro: "Unlimited", ent: "Custom" },
+        { name: "Complete Website SEO Audit", intern: true, manager: true, cmo: true },
+        { name: "Technical SEO Fixes & Diagnostics", intern: true, manager: true, cmo: true },
+        { name: "Keyword Tracking & Performance", intern: true, manager: true, cmo: true },
+        { name: "Competitor Analysis & Monitoring", intern: true, manager: true, cmo: true },
+        { name: "GEO (AI Search Visibility: ChatGPT, Perplexity)", intern: true, manager: true, cmo: true },
+        { name: "AEO (Answer Engine Optimization Mentions)", intern: true, manager: true, cmo: true },
+        { name: "Downloadable Audit Reports", intern: true, manager: true, cmo: true },
+        { name: "GitHub Integration (Branches & PRs)", intern: true, manager: true, cmo: true },
+        { name: "WordPress & CMS Crawling", intern: true, manager: true, cmo: true },
       ],
     },
     {
-      category: "Specialized AI Agents",
+      category: "Content & External Brand Visibility",
       items: [
-        { name: "SEO Agent (On-page & Technical Audits)", free: false, lite: true, pro: true, ent: true },
-        { name: "GEO Agent (AI Search Citations: ChatGPT, Perplexity)", free: false, lite: true, pro: true, ent: true },
-        { name: "Coding Agent (Automated GitHub PRs)", free: false, lite: true, pro: true, ent: true },
-        { name: "X (Twitter) Agent (Threads & Commentary)", free: false, lite: true, pro: true, ent: true },
-        { name: "Influencer Agent (Creator Matching)", free: false, lite: true, pro: true, ent: true },
-        { name: "Reddit Agent (Buyer Threads & Native Voice)", free: false, lite: false, pro: true, ent: true },
-        { name: "LinkedIn Agent (PDF Carousels & B2B Posts)", free: false, lite: false, pro: true, ent: true },
-        { name: "AI Content Writer (Full Articles & Guides)", free: false, lite: false, pro: true, ent: true },
-        { name: "UGC Videos Agent (Ad Scripts & Storyboards)", free: false, lite: false, pro: true, ent: true },
+        { name: "Blog Management & Publishing", intern: false, manager: true, cmo: true },
+        { name: "Third-party Posting & Syndication", intern: false, manager: true, cmo: true },
+        { name: "Reddit Integration (Thread Discovery & Drafts)", intern: false, manager: true, cmo: true },
+        { name: "Quora Discussions & Brand Answers", intern: false, manager: true, cmo: true },
+        { name: "Medium & External Distribution", intern: false, manager: true, cmo: true },
+        { name: "Backlinking & Authority Building Strategy", intern: false, manager: true, cmo: true },
+        { name: "LinkedIn Content Distribution", intern: false, manager: true, cmo: true },
       ],
     },
     {
-      category: "Integrations & Publishing",
+      category: "Executive Strategy & Creative Execution",
       items: [
-        { name: "Direct CMS Auto-Publishing (WordPress, Webflow, Framer)", free: false, lite: false, pro: true, ent: true },
-        { name: "GitHub Pull Request Automation", free: false, lite: true, pro: true, ent: true },
-        { name: "Google Search Console & GA4 Sync", free: false, lite: true, pro: true, ent: true },
-        { name: "WhatsApp & Telegram Draft Approvals", free: false, lite: true, pro: true, ent: true },
+        { name: "Comprehensive Marketing Strategies", intern: false, manager: false, cmo: true },
+        { name: "Social Media Campaign Creative", intern: false, manager: false, cmo: true },
+        { name: "Video Generation (UGC & Ad Clips)", intern: false, manager: false, cmo: true },
+        { name: "Full Campaign Management", intern: false, manager: false, cmo: true },
+        { name: "AI Brand Growth Recommendations", intern: false, manager: false, cmo: true },
+        { name: "Autonomous AI Marketing Agent", intern: false, manager: false, cmo: true },
       ],
     },
   ];
 
   const faqs = [
     {
-      q: "Are there any per-agent fees or hidden usage credits?",
-      a: "No. Okiza charges flat, predictable monthly or annual pricing with zero per-agent surcharges or hidden token counters. Every plan includes full access to its listed agent fleet.",
+      q: "What is the difference between the Intern, Manager, and CMO plans?",
+      a: "The Intern Plan provides foundational organic growth (technical SEO, GEO, AEO, and automated GitHub PR fixes). The Manager Plan adds external visibility beyond your site — blog creation, Reddit, Quora, Medium, and backlinking. The CMO Plan is our premier tier that acts as a full executive, handling quarterly marketing strategies, social media campaigns, video generation, and autonomous creative execution.",
+    },
+    {
+      q: "How does the GitHub integration work in the Intern Plan?",
+      a: "Okiza connects securely to your GitHub repository to create isolated branches and submit clean, documented Pull Requests (PRs) with schema markups, robots.txt updates, and technical SEO optimizations without touching production directly.",
     },
     {
       q: "How does the 7-day free trial work?",
-      a: "Both the Lite and Pro plans include a 7-day free trial. You get full access to the agents, can connect your site, and receive live recommendations. You can cancel anytime before the 7 days are up with zero penalty.",
+      a: "All plans include a full 7-day free trial. You can connect your domain, run complete audits, and receive ready-to-ship fixes immediately. You can cancel at any time with zero penalty.",
     },
     {
-      q: "Can I upgrade, downgrade, or cancel at any time?",
-      a: "Yes. You can switch between Lite and Pro, change billing cadence, or cancel your subscription directly from your account settings at any point.",
-    },
-    {
-      q: "What payment methods do you accept?",
-      a: "We accept all major credit and debit cards (Visa, Mastercard, American Express) through secure Stripe billing. For annual Enterprise plans, we also support ACH wire transfers and custom invoicing.",
-    },
-    {
-      q: "Do you offer discounts for agencies managing multiple client sites?",
-      a: "Yes! Our Agency Plan scales down the per-site cost as you add client domains (down to $77.40/mo per site). Contact our team for multi-workspace agency volume pricing.",
+      q: "Can I upgrade or downgrade between plans at any time?",
+      a: "Yes. You can switch between Intern, Manager, and CMO tiers at any point from your billing dashboard. Upgrades take effect immediately with prorated billing.",
     },
   ];
 
   return (
-    <div className="bg-[#000000] min-h-screen text-[#ffffff] selection:bg-[#ffffff] selection:text-[#000000] flex flex-col">
-      {/* Top sticky navigation bar */}
+    <div className="min-h-screen bg-[#000000] text-[#ededed] font-sans antialiased selection:bg-[#262626] selection:text-white">
       <NavBar />
 
-      <main className="flex-1 flex flex-col items-center justify-start w-full">
-        {/* HERO SECTION */}
-        <section className="w-full pt-20 pb-16 md:pt-28 md:pb-20 px-4 sm:px-6 flex flex-col items-center text-center relative overflow-hidden">
-          {/* Subtle background ambient glow */}
-          <div
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[360px] bg-[#38bdf8]/5 blur-[140px] rounded-full pointer-events-none"
-            aria-hidden="true"
-          />
-
-          {/* Top Pill Badge */}
-          <div className="inline-flex items-center gap-2 p-1 pl-1.5 pr-3 rounded-full bg-[#242120] border border-[#383332] mb-8 shadow-md">
-            <span className="bg-white text-black text-[10px] sm:text-[11px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider font-sans">
+      <main className="relative pt-12 pb-24 px-6 md:px-12 max-w-7xl mx-auto">
+        {/* Top Header Badge */}
+        <div className="flex justify-center mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#1c1917] border border-[#383332] shadow-sm">
+            <span className="text-[11px] font-mono tracking-widest text-[#a8a29e] uppercase font-bold">
               OKIZA AI CMO
             </span>
-            <div className="flex items-center gap-1.5 text-xs text-[#d4d4d8] font-medium pr-1">
-              <Zap className="w-3.5 h-3.5 text-[#fbbf24]" strokeWidth={2} />
-              <span>Transparent Pricing</span>
-            </div>
+            <span className="text-[#57534e]">•</span>
+            <span className="inline-flex items-center gap-1.5 text-xs text-white font-medium">
+              <Bot className="w-3.5 h-3.5 text-[#38bdf8]" />
+              Subscription Plans
+            </span>
           </div>
+        </div>
 
-          <h1 className="text-4xl sm:text-6xl md:text-[68px] font-bold text-white tracking-tight max-w-4xl leading-[1.08] mb-6">
-            Simple, Predictable Pricing.
+        {/* Title & Subheading */}
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-4">
+            Predictable Plans for Every Stage of Growth
           </h1>
-
-          <p className="text-base sm:text-lg md:text-xl text-[#a1a1aa] max-w-2xl font-normal leading-relaxed mb-10">
-            No per-agent fees. No hidden token counters. Deploy your entire autonomous marketing fleet starting at $129/mo with a 7-day free trial.
+          <p className="text-base text-[#a1a1aa] leading-relaxed">
+            From foundational SEO, GEO & AEO execution to a full autonomous Chief
+            Marketing Officer that plans, creates, and executes your marketing.
           </p>
+        </div>
 
-          {/* Monthly / Annual Billing Toggle */}
-          <div className="flex items-center gap-4 p-1.5 rounded-full bg-[#141414] border border-[#262626] mb-12 shadow-lg">
+        {/* Billing Switcher (Monthly / Annual) */}
+        <div className="flex items-center justify-center mb-16">
+          <div className="flex items-center gap-2 bg-[#141414] border border-[#262626] rounded-full p-1.5 shadow-lg">
             <button
               onClick={() => setAnnualBilling(false)}
-              className={`px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
+              className={`px-4 py-1.5 rounded-full text-xs font-medium transition-all cursor-pointer ${
                 !annualBilling
-                  ? "bg-white text-black shadow-md"
+                  ? "bg-[#262626] text-white font-semibold"
                   : "text-[#a1a1aa] hover:text-white"
               }`}
             >
-              Monthly Billing
+              Monthly billing
             </button>
             <button
               onClick={() => setAnnualBilling(true)}
-              className={`flex items-center gap-2 px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
+              className={`px-4 py-1.5 rounded-full text-xs font-medium transition-all flex items-center gap-1.5 cursor-pointer ${
                 annualBilling
-                  ? "bg-white text-black shadow-md"
+                  ? "bg-white text-black font-bold shadow-sm"
                   : "text-[#a1a1aa] hover:text-white"
               }`}
             >
-              <span>Annual Billing</span>
-              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#22c55e]/20 text-[#22c55e] border border-[#22c55e]/40">
-                SAVE 2 MONTHS
+              <span>Annual billing</span>
+              <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-black/15 font-bold">
+                Save 20%
               </span>
             </button>
           </div>
-        </section>
+        </div>
 
-        {/* 4 PRICING CARDS */}
-        <section className="w-full pb-20 px-4 sm:px-8 lg:px-12 max-w-[1560px] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {plans.map((plan, idx) => (
-              <div
-                key={idx}
-                className={`rounded-3xl p-7 flex flex-col justify-between transition-all duration-300 relative ${
-                  plan.highlight
-                    ? "bg-[#18181b] border-2 border-white shadow-[0_0_50px_-10px_rgba(255,255,255,0.15)] scale-[1.02]"
-                    : "bg-[#141414] border border-[#262626] hover:border-[#383332]"
-                }`}
-              >
-                {plan.badge && (
-                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-white text-black text-[10px] font-bold tracking-wider font-mono uppercase shadow-md">
-                    {plan.badge}
-                  </div>
-                )}
+        {/* Pricing Cards Grid (3 Plans: Intern, Manager, CMO) */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-24 max-w-6xl mx-auto">
+          {plans.map((plan) => (
+            <div
+              key={plan.id}
+              className={`rounded-2xl border p-6 md:p-8 flex flex-col justify-between relative transition-all duration-300 ${
+                plan.highlight
+                  ? "bg-[#141414] border-white shadow-[0_0_40px_rgba(255,255,255,0.12)] md:-translate-y-2 z-10"
+                  : "bg-[#111111]/80 border-[#262626] hover:border-[#404040]"
+              }`}
+            >
+              {plan.badge && (
+                <div
+                  className={`absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full text-[10px] font-bold font-mono tracking-widest uppercase flex items-center gap-1 shadow-md ${
+                    plan.highlight
+                      ? "bg-white text-black"
+                      : "bg-[#262626] text-[#a1a1aa] border border-[#3f3f46]"
+                  }`}
+                >
+                  {plan.highlight && <Sparkles className="w-3 h-3 fill-black" />}
+                  <span>{plan.badge}</span>
+                </div>
+              )}
 
-                <div>
-                  <h3 className="text-xl font-semibold text-white tracking-tight mb-2">
+              <div>
+                <div className="mb-2">
+                  <h3 className="text-xl font-bold text-white tracking-tight">
                     {plan.name}
                   </h3>
-                  <p className="text-xs text-[#a1a1aa] min-h-[36px] leading-relaxed mb-6">
-                    {plan.desc}
-                  </p>
-
-                  <div className="mb-6 pb-6 border-b border-[#262626]">
-                    <div className="flex items-baseline gap-1">
-                      <span className="text-4xl sm:text-5xl font-bold text-white font-mono tracking-tight">
-                        {plan.price}
-                      </span>
-                      {plan.price !== "Custom" && (
-                        <span className="text-xs text-[#71717a] font-mono">/mo</span>
-                      )}
-                    </div>
-                    <span className="text-[11px] text-[#71717a] font-mono block mt-1">
-                      {plan.period}
-                    </span>
-                    {plan.annualNote && (
-                      <span className="text-[11px] text-[#4ade80] font-mono font-medium block mt-0.5">
-                        {plan.annualNote}
-                      </span>
-                    )}
-                  </div>
-
-                  {/* Feature Checklist */}
-                  <div className="space-y-3 mb-8">
-                    {plan.features.map((feat, fIdx) => (
-                      <div key={fIdx} className="flex items-start gap-2.5 text-xs text-[#d4d4d8]">
-                        <Check className="w-3.5 h-3.5 text-[#38bdf8] shrink-0 mt-0.5" />
-                        <span className="leading-snug">{feat}</span>
-                      </div>
-                    ))}
-                  </div>
+                  <span className="text-xs text-[#38bdf8] font-mono font-medium block mt-0.5">
+                    {plan.subtitle}
+                  </span>
                 </div>
 
+                <p className="text-xs text-[#a1a1aa] mb-6 leading-relaxed">
+                  {plan.desc}
+                </p>
+
+                {/* Price Display */}
+                <div className="mb-6 pb-6 border-b border-[#262626]">
+                  <div className="flex items-baseline gap-1">
+                    <span className="text-4xl md:text-5xl font-extrabold text-white tracking-tight font-mono">
+                      {plan.price}
+                    </span>
+                    <span className="text-xs text-[#a1a1aa]">/ month</span>
+                  </div>
+                  <span className="text-[11px] text-[#71717a] block mt-1">
+                    {plan.period}
+                  </span>
+                  {plan.annualNote && (
+                    <span className="text-[11px] text-green-400 font-mono block mt-0.5">
+                      {plan.annualNote}
+                    </span>
+                  )}
+                </div>
+
+                {/* Features List */}
+                <div className="space-y-3 mb-8">
+                  <span className="text-[11px] font-bold text-white uppercase tracking-wider block font-mono">
+                    Features Included:
+                  </span>
+                  {plan.features.map((feature, idx) => (
+                    <div key={idx} className="flex items-start gap-2.5">
+                      <div className="w-4 h-4 rounded-full bg-white/10 flex items-center justify-center shrink-0 mt-0.5">
+                        <Check className="w-2.5 h-2.5 text-white stroke-[3]" />
+                      </div>
+                      <span className="text-xs text-[#d4d4d8] leading-snug">
+                        {feature}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Card Action CTA */}
+              <div>
                 <Link
                   href={plan.ctaHref}
-                  className={`w-full py-3 rounded-full font-semibold text-xs sm:text-sm tracking-tight text-center transition-all flex items-center justify-center gap-1.5 ${
+                  className={`w-full py-3.5 rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition-all cursor-pointer shadow-lg ${
                     plan.highlight
-                      ? "bg-white text-black hover:bg-[#e4e4e7] shadow-lg"
-                      : "bg-[#27272a] text-white hover:bg-[#3f3f46] border border-[#3f3f46]"
+                      ? "bg-white hover:bg-[#e4e4e7] text-black shadow-[0_0_20px_rgba(255,255,255,0.25)]"
+                      : "bg-[#262626] hover:bg-[#333333] text-white"
                   }`}
                 >
                   <span>{plan.ctaText}</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
+                <span className="text-[10px] text-center text-[#71717a] block mt-2">
+                  7-day free trial · Cancel anytime
+                </span>
               </div>
-            ))}
-          </div>
-        </section>
+            </div>
+          ))}
+        </div>
 
-        {/* FULL FEATURE COMPARISON MATRIX TABLE */}
-        <section className="w-full py-20 px-4 sm:px-8 lg:px-12 max-w-[1560px] mx-auto border-t border-[#262626]">
-          <div className="text-center max-w-2xl mx-auto mb-14">
-            <h2 className="text-3xl sm:text-4xl font-semibold text-white tracking-tight mb-3">
-              Full Feature Comparison
+        {/* Feature Comparison Matrix */}
+        <section className="mb-24">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
+              Full Plan Feature Comparison
             </h2>
-            <p className="text-sm sm:text-base text-[#a1a1aa]">
-              Everything each tier includes, with zero hidden limitations.
+            <p className="text-sm text-[#a1a1aa]">
+              Compare capabilities across the Intern, Manager, and CMO tiers.
             </p>
           </div>
 
-          <div className="bg-[#141414] border border-[#262626] rounded-3xl overflow-hidden shadow-2xl">
+          <div className="border border-[#262626] rounded-2xl overflow-hidden bg-[#111111]/80 backdrop-blur-md shadow-2xl">
             <div className="overflow-x-auto">
-              <table className="w-full text-left text-sm border-collapse">
+              <table className="w-full text-left border-collapse text-xs md:text-sm">
                 <thead>
-                  <tr className="border-b border-[#262626] bg-[#1c1917] text-white font-mono text-xs uppercase">
-                    <th className="py-5 px-6">Capability</th>
-                    <th className="py-5 px-6 text-center">Free</th>
-                    <th className="py-5 px-6 text-center">Lite ($108/mo)</th>
-                    <th className="py-5 px-6 text-center font-bold text-[#38bdf8]">Pro ($208/mo)</th>
-                    <th className="py-5 px-6 text-center">Enterprise</th>
+                  <tr className="border-b border-[#262626] bg-[#141414]">
+                    <th className="p-4 md:p-5 font-semibold text-white w-2/5">
+                      Features & Capabilities
+                    </th>
+                    <th className="p-4 md:p-5 font-semibold text-white text-center w-1/5">
+                      Intern Plan
+                    </th>
+                    <th className="p-4 md:p-5 font-semibold text-white text-center w-1/5 bg-white/[0.03]">
+                      Manager Plan
+                    </th>
+                    <th className="p-4 md:p-5 font-semibold text-white text-center w-1/5">
+                      CMO Plan
+                    </th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-[#262626]">
-                  {comparisonFeatures.map((cat, cIdx) => (
-                    <>
-                      <tr key={`cat-${cIdx}`} className="bg-[#18181b]/70 font-semibold text-xs font-mono text-[#a1a1aa] uppercase tracking-wider">
-                        <td colSpan={5} className="py-3 px-6">
+                <tbody className="divide-y divide-[#262626]/70">
+                  {comparisonFeatures.map((cat, catIdx) => (
+                    <tbody key={catIdx} className="divide-y divide-[#262626]/40">
+                      <tr className="bg-[#18181b]/50">
+                        <td
+                          colSpan={4}
+                          className="px-4 py-3 font-mono text-xs font-bold uppercase tracking-wider text-[#a1a1aa]"
+                        >
                           {cat.category}
                         </td>
                       </tr>
-                      {cat.items.map((row, rIdx) => (
-                        <tr key={`row-${rIdx}`} className="hover:bg-white/[0.02] transition-colors">
-                          <td className="py-4 px-6 text-white font-medium text-xs sm:text-sm">
-                            {row.name}
+                      {cat.items.map((item, itemIdx) => (
+                        <tr key={itemIdx} className="hover:bg-white/[0.02]">
+                          <td className="p-4 text-[#d4d4d8] font-medium">
+                            {item.name}
                           </td>
-                          <td className="py-4 px-6 text-center text-xs">
-                            {typeof row.free === "boolean" ? (
-                              row.free ? (
-                                <Check className="w-4 h-4 text-[#4ade80] mx-auto" />
+                          <td className="p-4 text-center">
+                            {typeof item.intern === "boolean" ? (
+                              item.intern ? (
+                                <Check className="w-4 h-4 text-green-400 mx-auto" />
                               ) : (
                                 <span className="text-[#52525b]">—</span>
                               )
                             ) : (
-                              <span className="text-[#a1a1aa] font-mono">{row.free}</span>
+                              <span className="text-xs text-white font-mono">
+                                {item.intern}
+                              </span>
                             )}
                           </td>
-                          <td className="py-4 px-6 text-center text-xs">
-                            {typeof row.lite === "boolean" ? (
-                              row.lite ? (
-                                <Check className="w-4 h-4 text-[#4ade80] mx-auto" />
+                          <td className="p-4 text-center bg-white/[0.03]">
+                            {typeof item.manager === "boolean" ? (
+                              item.manager ? (
+                                <Check className="w-4 h-4 text-green-400 mx-auto" />
                               ) : (
                                 <span className="text-[#52525b]">—</span>
                               )
                             ) : (
-                              <span className="text-white font-mono">{row.lite}</span>
+                              <span className="text-xs text-white font-mono">
+                                {item.manager}
+                              </span>
                             )}
                           </td>
-                          <td className="py-4 px-6 text-center text-xs bg-[#18181b]/40 font-semibold">
-                            {typeof row.pro === "boolean" ? (
-                              row.pro ? (
-                                <Check className="w-4 h-4 text-[#38bdf8] mx-auto" />
+                          <td className="p-4 text-center">
+                            {typeof item.cmo === "boolean" ? (
+                              item.cmo ? (
+                                <Check className="w-4 h-4 text-green-400 mx-auto" />
                               ) : (
                                 <span className="text-[#52525b]">—</span>
                               )
                             ) : (
-                              <span className="text-[#38bdf8] font-mono">{row.pro}</span>
-                            )}
-                          </td>
-                          <td className="py-4 px-6 text-center text-xs">
-                            {typeof row.ent === "boolean" ? (
-                              row.ent ? (
-                                <Check className="w-4 h-4 text-[#4ade80] mx-auto" />
-                              ) : (
-                                <span className="text-[#52525b]">—</span>
-                              )
-                            ) : (
-                              <span className="text-white font-mono">{row.ent}</span>
+                              <span className="text-xs text-white font-mono">
+                                {item.cmo}
+                              </span>
                             )}
                           </td>
                         </tr>
                       ))}
-                    </>
+                    </tbody>
                   ))}
                 </tbody>
               </table>
@@ -383,38 +406,43 @@ export default function PricingPage() {
           </div>
         </section>
 
-        {/* FREQUENTLY ASKED QUESTIONS */}
-        <section className="w-full py-20 px-4 sm:px-8 lg:px-12 max-w-[1440px] mx-auto border-t border-[#262626]">
-          <div className="max-w-2xl mb-12">
-            <p className="text-xs font-mono uppercase tracking-[0.2em] text-[#a1a1aa] mb-3">
-              FAQ
-            </p>
-            <h2 className="text-3xl sm:text-4xl font-semibold text-white tracking-tight">
-              Pricing &amp; Account Questions
+        {/* Pricing FAQs Accordion */}
+        <section className="max-w-3xl mx-auto mb-20">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl font-bold text-white mb-2">
+              Frequently Asked Questions About Billing
             </h2>
+            <p className="text-xs text-[#a1a1aa]">
+              Everything you need to know about our subscription tiers and free trials.
+            </p>
           </div>
 
-          <div className="divide-y divide-[#262626] border-y border-[#262626]">
+          <div className="space-y-3">
             {faqs.map((faq, idx) => {
               const isOpen = openFaq === idx;
               return (
-                <div key={idx} className="py-6">
+                <div
+                  key={idx}
+                  className="rounded-xl border border-[#262626] bg-[#141414] overflow-hidden"
+                >
                   <button
-                    onClick={() => setOpenFaq(isOpen ? -1 : idx)}
-                    className="w-full flex items-center justify-between text-left group cursor-pointer"
+                    onClick={() => setOpenFaq(isOpen ? null : idx)}
+                    className="w-full p-4 md:p-5 text-left flex items-center justify-between gap-4 cursor-pointer"
                   >
-                    <span className="text-lg sm:text-xl font-medium text-white group-hover:text-[#38bdf8] transition-colors pr-4">
+                    <span className="text-sm font-semibold text-white">
                       {faq.q}
                     </span>
                     <ChevronDown
-                      className={`w-5 h-5 text-[#a1a1aa] shrink-0 transition-transform duration-200 ${
+                      className={`w-4 h-4 text-[#a1a1aa] shrink-0 transition-transform ${
                         isOpen ? "rotate-180 text-white" : ""
                       }`}
                     />
                   </button>
                   {isOpen && (
-                    <div className="mt-4 text-sm sm:text-base text-[#a1a1aa] leading-relaxed pr-8 animate-fadeIn">
-                      {faq.a}
+                    <div className="px-4 md:px-5 pb-5 pt-0 border-t border-[#262626]/50">
+                      <p className="text-xs text-[#a1a1aa] leading-relaxed mt-3">
+                        {faq.a}
+                      </p>
                     </div>
                   )}
                 </div>
@@ -422,11 +450,33 @@ export default function PricingPage() {
             })}
           </div>
         </section>
+
+        {/* Bottom CTA Banner */}
+        <div className="p-8 md:p-12 rounded-2xl border border-[#262626] bg-gradient-to-b from-[#141414] to-[#0a0a0a] text-center max-w-2xl mx-auto shadow-2xl">
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
+            Ready to test Okiza?
+          </h2>
+          <p className="text-sm text-[#a1a1aa] mb-6">
+            Get your instant SEO & GEO audit and start with your 7-day free trial today.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <Link
+              href="/#analyze"
+              className="w-full sm:w-auto px-6 py-3 rounded-full bg-white text-black font-semibold text-xs hover:bg-[#e4e4e7] transition-all shadow-[0_0_20px_rgba(255,255,255,0.25)]"
+            >
+              Analyze Your Website Free
+            </Link>
+            <Link
+              href="/faq"
+              className="w-full sm:w-auto px-6 py-3 rounded-full bg-[#18181b] border border-[#262626] text-white font-medium text-xs hover:border-[#383332] transition-all"
+            >
+              Help Center & FAQ
+            </Link>
+          </div>
+        </div>
       </main>
 
-      {/* Footer */}
       <Footer />
     </div>
   );
 }
-
