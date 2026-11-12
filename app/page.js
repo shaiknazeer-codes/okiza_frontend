@@ -1,5 +1,7 @@
 import NavBar from "@/components/NavBar";
-import HeroSection from "@/components/HeroSection";
+import McpHeroSection from "@/components/McpHeroSection";
+import AgentOnboardingSection from "@/components/AgentOnboardingSection";
+import PublishStackSection from "@/components/PublishStackSection";
 import ImpactMetrics from "@/components/ImpactMetrics";
 import CapabilitiesSection from "@/components/CapabilitiesSection";
 import ProductShowcaseSection from "@/components/ProductShowcaseSection";
@@ -20,8 +22,14 @@ export default function Home() {
       <NavBar />
 
       <main className="flex flex-col w-full">
-        {/* Hero Section with interactive business URL analyzer */}
-        <HeroSection />
+        {/* Hero Section: Your AI CMO inside the chat you already use (MCP) */}
+        <McpHeroSection />
+
+        {/* 5-Step Interactive Agent Onboarding Flow */}
+        <AgentOnboardingSection />
+
+        {/* Step 3: Publish & Stack Flow Architecture */}
+        <PublishStackSection />
 
         {/* Quantifiable ROI and Signal Metrics */}
         <ImpactMetrics />

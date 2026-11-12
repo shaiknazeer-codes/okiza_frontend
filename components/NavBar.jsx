@@ -52,7 +52,7 @@ export default function NavBar() {
       tag: "CUSTOMER STORY",
       headline:
         "How Foremark Legal turned their seed announcement into a viral X story with Okiza",
-      link: "#",
+      link: "/stories/foremark",
       company: "Foremark Legal",
       domain: "foremarklegal.com",
       initials: "FL",
@@ -62,7 +62,7 @@ export default function NavBar() {
       tag: "CUSTOMER STORY",
       headline:
         "How Novaflow captured 64% AI search share against incumbent enterprise rivals",
-      link: "#",
+      link: "/stories/novaflow",
       company: "Novaflow AI",
       domain: "novaflow.io",
       initials: "NF",
@@ -72,7 +72,7 @@ export default function NavBar() {
       tag: "CUSTOMER STORY",
       headline:
         "How Artisan Goods scaled creator campaigns to $2.4M ARR with zero agency headcount",
-      link: "#",
+      link: "/stories/artisan",
       company: "Artisan Goods",
       domain: "artisangoods.co",
       initials: "AG",
@@ -84,73 +84,73 @@ export default function NavBar() {
       title: "B2B SaaS",
       desc: "Pipeline from SEO and content.",
       icon: Layers,
-      href: "#showcase",
+      href: "/marketing-automation/saas",
     },
     {
       title: "Startups",
       desc: "Zero to your first users.",
       icon: Rocket,
-      href: "#showcase",
+      href: "/marketing-automation/startups",
     },
     {
       title: "Ecommerce",
       desc: "Creators, content and ads.",
       icon: ShoppingBag,
-      href: "#showcase",
+      href: "/marketing-automation/ecommerce",
     },
     {
       title: "Digital Agencies",
       desc: "Run more accounts, one team.",
       icon: Users,
-      href: "#showcase",
+      href: "/marketing-automation/agencies",
     },
     {
       title: "Professional Services",
       desc: "Turn expertise into demand.",
       icon: Briefcase,
-      href: "#showcase",
+      href: "/marketing-automation/services",
     },
     {
       title: "Small Business",
       desc: "Marketing without the headcount.",
       icon: Store,
-      href: "#showcase",
+      href: "/marketing-automation/small-business",
     },
     {
       title: "Real Estate",
       desc: "Listings and demand on autopilot.",
       icon: Building2,
-      href: "#showcase",
+      href: "/marketing-automation/real-estate",
     },
     {
       title: "Financial Advisors",
       desc: "Compliant content, more referrals.",
       icon: TrendingUp,
-      href: "#showcase",
+      href: "/marketing-automation/financial-advisors",
     },
     {
       title: "Healthcare",
       desc: "Fill the calendar with patients.",
       icon: HeartPulse,
-      href: "#showcase",
+      href: "/marketing-automation/healthcare",
     },
     {
       title: "Recruiters",
       desc: "Build a brand candidates trust.",
       icon: UserPlus,
-      href: "#showcase",
+      href: "/marketing-automation/recruiters",
     },
     {
       title: "Restaurants",
       desc: "Own local search and social.",
       icon: Utensils,
-      href: "#showcase",
+      href: "/marketing-automation/restaurants",
     },
     {
       title: "Law Firms",
       desc: "Rank for the cases you want.",
       icon: Scale,
-      href: "#showcase",
+      href: "/marketing-automation/law-firms",
     },
   ];
 
@@ -234,7 +234,7 @@ export default function NavBar() {
     {
       title: "WordPress",
       desc: "Auto-publish posts.",
-      href: "#showcase",
+      href: "/integrations/wordpress",
       icon: (
         <svg viewBox="0 0 24 24" className="w-5 h-5" fill="#3880a6">
           <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 1.2a10.8 10.8 0 0 1 10.8 10.8c0 5.09-3.52 9.35-8.25 10.51l-4.75-13.8c.8-.04 1.54-.12 1.54-.12.56-.07.5-.9-.06-.86 0 0-1.68.14-2.78.14-1.03 0-2.78-.14-2.78-.14-.56-.04-.62.8-.06.86 0 0 .72.08 1.45.12l2.22 6.13-3.13 9.36A10.77 10.77 0 0 1 1.2 12C1.2 6.035 6.035 1.2 12 1.2zm6.27 4.96c.55.77.86 1.7.86 2.7 0 1.83-1.05 3.92-2.13 6.09l-3.35 10.02c4.15-1.37 7.15-5.3 7.15-9.97 0-3.47-1.64-6.55-4.17-8.52l1.64-.32zM3.44 7.6c-.66 1.27-1.04 2.73-1.04 4.4 0 3.42 1.6 6.47 4.07 8.44L2.83 9.4c.3-.03.58-.06.61-.06.56-.07.5-.9-.06-.86l.06-.88zm8.68 7.37l2.84 8.28c.41.05.83.08 1.25.08.37 0 .73-.02 1.09-.06l-5.18-15.02z"/>
@@ -244,7 +244,7 @@ export default function NavBar() {
     {
       title: "Wix",
       desc: "Publish to Wix blog.",
-      href: "#showcase",
+      href: "/integrations/wix",
       icon: (
         <span className="text-xs font-black tracking-tight text-white font-sans select-none">
           wix
@@ -254,7 +254,7 @@ export default function NavBar() {
     {
       title: "Google Search Con...",
       desc: "Track rankings.",
-      href: "#showcase",
+      href: "/integrations/google-search-console",
       icon: (
         <svg viewBox="0 0 24 24" className="w-5 h-5">
           <path d="M4 17.5a1.5 1.5 0 0 0 1.5 1.5H8v-5H4v3.5z" fill="#00832d" />
@@ -267,7 +267,7 @@ export default function NavBar() {
     {
       title: "LinkedIn",
       desc: "Publish posts.",
-      href: "#showcase",
+      href: "/integrations/linkedin",
       icon: (
         <div className="w-[22px] h-[22px] rounded-[5px] bg-[#0A66C2] flex items-center justify-center shrink-0">
           <svg viewBox="0 0 24 24" fill="white" className="w-3.5 h-3.5" aria-hidden="true">
@@ -279,7 +279,7 @@ export default function NavBar() {
     {
       title: "Telegram",
       desc: "Updates in chat.",
-      href: "#showcase",
+      href: "/integrations/telegram",
       icon: (
         <div className="w-[22px] h-[22px] rounded-full bg-[#2AABEE] flex items-center justify-center shrink-0">
           <svg viewBox="0 0 24 24" fill="white" className="w-3.5 h-3.5 translate-x-[-0.5px]">
@@ -291,7 +291,7 @@ export default function NavBar() {
     {
       title: "Facebook",
       desc: "Publish posts & videos.",
-      href: "#showcase",
+      href: "/integrations/facebook",
       icon: (
         <div className="w-[22px] h-[22px] rounded-full bg-[#1877F2] flex items-center justify-center shrink-0">
           <svg viewBox="0 0 24 24" fill="white" className="w-3.5 h-3.5 translate-y-[0.5px]">
@@ -306,7 +306,7 @@ export default function NavBar() {
     {
       title: "Webflow",
       desc: "Publish to Webflow.",
-      href: "#showcase",
+      href: "/integrations/webflow",
       icon: (
         <svg viewBox="0 0 24 24" fill="#146EF5" className="w-5 h-5">
           <path d="M17.842 5.437l-3.325 9.773-2.715-9.773H7.49l-3.09 13.126h4.59l1.657-6.536 2.457 6.536h3.879l4.499-13.126h-3.64z"/>
@@ -316,7 +316,7 @@ export default function NavBar() {
     {
       title: "HubSpot",
       desc: "Publish to HubSpot blog.",
-      href: "#showcase",
+      href: "/integrations/hubspot",
       icon: (
         <svg viewBox="0 0 24 24" fill="#FF7A59" className="w-5 h-5">
           <path d="M18.8 9.4c0-.9-.7-1.6-1.6-1.6-.2 0-.4 0-.6.1V5.7c.6-.4 1-.9 1-1.7 0-1.1-.9-2-2-2s-2 .9-2 2c0 .7.4 1.3 1 1.7v2.2c-.2-.1-.4-.1-.6-.1-.9 0-1.6.7-1.6 1.6 0 .6.4 1.2 1 1.5v3.4l-2.4 1.4c-.4-.5-1-.8-1.7-.8-1.2 0-2.2 1-2.2 2.2s1 2.2 2.2 2.2c1 0 1.9-.7 2.1-1.7l2.5-1.4c.4.4.9.6 1.5.6.9 0 1.6-.7 1.6-1.6 0-.6-.3-1.1-.8-1.4v-3.5c.6-.3.9-.9.9-1.5zm-3.2-6c.4 0 .7.3.7.7s-.3.7-.7.7-.7-.3-.7-.7.3-.7.7-.7zm-5.7 17.5c-.6 0-1.1-.5-1.1-1.1s.5-1.1 1.1-1.1 1.1.5 1.1 1.1-.5 1.1-1.1 1.1zm6.3-8.8c-.4 0-.7-.3-.7-.7s.3-.7.7-.7.7.3.7.7-.3.7-.7.7z"/>
@@ -326,7 +326,7 @@ export default function NavBar() {
     {
       title: "Google Analytics",
       desc: "Track traffic.",
-      href: "#showcase",
+      href: "/integrations/google-analytics",
       icon: (
         <svg viewBox="0 0 24 24" className="w-5 h-5">
           <path d="M19.5 4h-2a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1z" fill="#F9AB00" />
@@ -338,7 +338,7 @@ export default function NavBar() {
     {
       title: "X (Twitter)",
       desc: "Publish threads.",
-      href: "#showcase",
+      href: "/integrations/x-twitter",
       icon: (
         <svg viewBox="0 0 24 24" fill="currentColor" className="w-[18px] h-[18px] text-white shrink-0" aria-hidden="true">
           <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
@@ -348,7 +348,7 @@ export default function NavBar() {
     {
       title: "TikTok",
       desc: "Publish clips.",
-      href: "#showcase",
+      href: "/integrations/tiktok",
       icon: (
         <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-white">
           <path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-2.882 2.87 2.896 2.896 0 0 1-2.882-2.87 2.896 2.896 0 0 1 2.882-2.87c.277 0 .543.04.796.115V9.45a6.34 6.34 0 0 0-.796-.051A6.335 6.335 0 0 0 3 15.735a6.335 6.335 0 0 0 6.336 6.337 6.335 6.335 0 0 0 6.336-6.337V8.65a8.21 8.21 0 0 0 4.887 1.585V6.787a4.838 4.838 0 0 1-.97-.101z"/>
@@ -361,7 +361,7 @@ export default function NavBar() {
     {
       title: "Framer",
       desc: "Sync Framer content.",
-      href: "#showcase",
+      href: "/integrations/framer",
       icon: (
         <svg viewBox="0 0 24 24" fill="currentColor" className="w-4.5 h-4.5 text-white">
           <path d="M4 2h16v7h-8l8 7H4v-7h8L4 2zm0 14h8l-8 7v-7z" />
@@ -371,7 +371,7 @@ export default function NavBar() {
     {
       title: "Sanity",
       desc: "Publish content.",
-      href: "#showcase",
+      href: "/integrations/sanity",
       icon: (
         <svg viewBox="0 0 24 24" fill="#F03E2F" className="w-5 h-5">
           <path d="M19.8 7.3l-1.9-1.2-12.7 8.2 1.9 1.2L19.8 7.3zm-3.3-2.1l-1.9-1.2-8.5 5.5 1.9 1.2 8.5-5.5zm-2.8 11.2l-1.9-1.2-4.5 2.9 1.9 1.2 4.5-2.9z"/>
@@ -381,7 +381,7 @@ export default function NavBar() {
     {
       title: "GitHub",
       desc: "Open SEO PRs.",
-      href: "#showcase",
+      href: "/integrations/github",
       icon: (
         <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-white">
           <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
@@ -391,7 +391,7 @@ export default function NavBar() {
     {
       title: "WhatsApp",
       desc: "Drafts in chat.",
-      href: "#showcase",
+      href: "/integrations/whatsapp",
       icon: (
         <div className="w-[22px] h-[22px] rounded-full bg-[#25D366] flex items-center justify-center shrink-0">
           <svg viewBox="0 0 24 24" fill="white" className="w-3.5 h-3.5">
@@ -403,7 +403,7 @@ export default function NavBar() {
     {
       title: "Instagram",
       desc: "Publish clips.",
-      href: "#showcase",
+      href: "/integrations/instagram",
       icon: (
         <div className="w-[22px] h-[22px] rounded-[6px] bg-gradient-to-tr from-[#FD5949] via-[#D6249F] to-[#285AEB] flex items-center justify-center shrink-0">
           <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5">
@@ -703,7 +703,7 @@ export default function NavBar() {
                     {/* Bottom Link: See more use cases → */}
                     <div className="pt-6 mt-4 border-t border-[#262626]/70 flex items-center justify-start">
                       <Link
-                        href="#capabilities"
+                        href="/marketing-automation/saas"
                         onClick={() => setActiveMenu(null)}
                         className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#ffffff] hover:text-[#e4e4e7] transition-colors group cursor-pointer"
                       >
@@ -727,7 +727,7 @@ export default function NavBar() {
                         </h4>
 
                         <Link
-                          href="#showcase"
+                          href={story.link || `/stories/${story.id}`}
                           onClick={() => setActiveMenu(null)}
                           className="inline-flex items-center gap-1 text-xs text-[#a1a1aa] hover:text-[#ffffff] transition-colors"
                         >
@@ -787,7 +787,7 @@ export default function NavBar() {
 
           {/* Pricing */}
           <Link
-            href="#pricing"
+            href="/pricing"
             className="px-3 py-1.5 text-sm text-[#a1a1aa] hover:text-[#ffffff] font-medium transition-colors"
           >
             Pricing
@@ -820,7 +820,7 @@ export default function NavBar() {
               <div className="absolute top-full right-0 mt-3 w-80 rounded-[22px] border border-[#383332] bg-[#292524] backdrop-blur-2xl p-5 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.95)] animate-fadeIn z-50 text-left">
                 <div className="flex flex-col gap-4">
                   <Link
-                    href="#workflow"
+                    href="/growth-methodology"
                     onClick={() => setActiveMenu(null)}
                     className="flex items-center gap-3.5 p-1 rounded-xl hover:bg-white/[0.04] transition-all group cursor-pointer"
                   >
@@ -838,7 +838,7 @@ export default function NavBar() {
                   </Link>
 
                   <Link
-                    href="#faq"
+                    href="/faq"
                     onClick={() => setActiveMenu(null)}
                     className="flex items-center gap-3.5 p-1 rounded-xl hover:bg-white/[0.04] transition-all group cursor-pointer"
                   >
@@ -856,7 +856,7 @@ export default function NavBar() {
                   </Link>
 
                   <Link
-                    href="#showcase"
+                    href="/docs"
                     onClick={() => setActiveMenu(null)}
                     className="flex items-center gap-3.5 p-1 rounded-xl hover:bg-white/[0.04] transition-all group cursor-pointer"
                   >
@@ -970,25 +970,39 @@ export default function NavBar() {
           </div>
 
           <Link
-            href="#capabilities"
+            href="/integrations"
             onClick={() => setMobileMenuOpen(false)}
             className="text-sm text-[#ffffff] py-2 border-b border-[#262626]/50"
           >
-            Agents & Platform
+            Integrations Directory
           </Link>
           <Link
-            href="#workflow"
+            href="/growth-methodology"
             onClick={() => setMobileMenuOpen(false)}
             className="text-sm text-[#ffffff] py-2 border-b border-[#262626]/50"
           >
-            Methodology
+            Growth Methodology
           </Link>
           <Link
-            href="#pricing"
+            href="/pricing"
             onClick={() => setMobileMenuOpen(false)}
             className="text-sm text-[#ffffff] py-2 border-b border-[#262626]/50"
           >
-            Pricing
+            Pricing Plans
+          </Link>
+          <Link
+            href="/faq"
+            onClick={() => setMobileMenuOpen(false)}
+            className="text-sm text-[#ffffff] py-2 border-b border-[#262626]/50"
+          >
+            Help Center & FAQ
+          </Link>
+          <Link
+            href="/docs"
+            onClick={() => setMobileMenuOpen(false)}
+            className="text-sm text-[#ffffff] py-2 border-b border-[#262626]/50"
+          >
+            API & Webhooks
           </Link>
 
           <div className="pt-2">

@@ -33,20 +33,20 @@ export default function Footer() {
             <span className="text-xs font-semibold text-[#ffffff] uppercase tracking-wider">
               Platform
             </span>
-            <Link href="#capabilities" className="text-xs hover:text-[#ffffff] transition-colors">
-              Brand Intelligence
+            <Link href="/agents/seo" className="text-xs hover:text-[#ffffff] transition-colors">
+              SEO Agent
             </Link>
-            <Link href="#competitive" className="text-xs hover:text-[#ffffff] transition-colors">
-              Competitive Intelligence
+            <Link href="/agents/geo" className="text-xs hover:text-[#ffffff] transition-colors">
+              GEO Agent
             </Link>
-            <Link href="#capabilities" className="text-xs hover:text-[#ffffff] transition-colors">
-              SEO & AI Search
+            <Link href="/agents/coding" className="text-xs hover:text-[#ffffff] transition-colors">
+              Coding Agent
             </Link>
-            <Link href="#capabilities" className="text-xs hover:text-[#ffffff] transition-colors">
-              Creative Studio
+            <Link href="/agents/writer" className="text-xs hover:text-[#ffffff] transition-colors">
+              Writer Agent
             </Link>
-            <Link href="#capabilities" className="text-xs hover:text-[#ffffff] transition-colors">
-              Influencer Studio
+            <Link href="/integrations" className="text-xs hover:text-[#ffffff] transition-colors">
+              16+ Integrations
             </Link>
           </div>
 
@@ -55,19 +55,19 @@ export default function Footer() {
             <span className="text-xs font-semibold text-[#ffffff] uppercase tracking-wider">
               Resources
             </span>
-            <Link href="#workflow" className="text-xs hover:text-[#ffffff] transition-colors">
-              Methodology
+            <Link href="/growth-methodology" className="text-xs hover:text-[#ffffff] transition-colors">
+              Growth Methodology
             </Link>
-            <Link href="#showcase" className="text-xs hover:text-[#ffffff] transition-colors">
-              Product Tour
+            <Link href="/stories" className="text-xs hover:text-[#ffffff] transition-colors">
+              Customer Stories
             </Link>
-            <Link href="#faq" className="text-xs hover:text-[#ffffff] transition-colors">
-              Documentation
+            <Link href="/docs" className="text-xs hover:text-[#ffffff] transition-colors">
+              API & Webhooks
             </Link>
-            <Link href="#faq" className="text-xs hover:text-[#ffffff] transition-colors">
-              API Reference
+            <Link href="/faq" className="text-xs hover:text-[#ffffff] transition-colors">
+              Help Center & FAQ
             </Link>
-            <Link href="#pricing" className="text-xs hover:text-[#ffffff] transition-colors">
+            <Link href="/pricing" className="text-xs hover:text-[#ffffff] transition-colors">
               Pricing Plans
             </Link>
           </div>

@@ -98,6 +98,15 @@ html, body {
   }
 }
 
+@keyframes landing-flow {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: -163px;
+  }
+}
+
 .animate-laser {
   animation: laserTravel 3.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
@@ -108,4 +117,8 @@ html, body {
 
 .animate-ambient {
   animation: ambientPulse 6s ease-in-out infinite;
+}
+
+.animate-landing-flow {
+  animation: landing-flow 4.5s linear infinite;
 }
