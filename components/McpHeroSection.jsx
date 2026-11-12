@@ -168,7 +168,7 @@ export default function McpHeroSection() {
   const preview = chatPreviews[activePlatform] || chatPreviews.chatgpt;
 
   return (
-    <section className="relative w-full pt-16 md:pt-24 pb-20 px-6 md:px-12 bg-[#000000] text-center overflow-hidden border-b border-[#262626]">
+    <section className="relative w-full pt-20 pb-20 px-6 md:px-12 bg-[#000000] text-center overflow-hidden border-b border-[#262626]">
       {/* Subtle Background Pattern matching reference */}
       <div className="absolute inset-0 pointer-events-none opacity-20 bg-[radial-gradient(#27272a_1px,transparent_1px)] [background-size:24px_24px]"></div>
 
