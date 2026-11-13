@@ -211,7 +211,7 @@ export default function CapabilitiesSection({ onSelectCapability }) {
                       How we turned seed news into a viral story
                     </span>
                     <span className="text-[10px] text-[#a1a1aa] block mt-0.5 truncate">
-                      Multi-format: X Thread • LinkedIn • Newsletter
+                      Multi-format: X Thread • Newsletter • Blog
                     </span>
                   </div>
 

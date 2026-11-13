@@ -45,7 +45,7 @@ export default function PricingSection() {
         "Quora Integration: high-intent question brand answers",
         "Medium & External Publishing distribution",
         "Third-party Posting & Backlinking strategy",
-        "LinkedIn Content: B2B thought leadership & carousels",
+        "Social & Thought Leadership: B2B authority content",
         "Cross-platform distribution beyond your own website",
         "Priority analytics refresh & ranking alerts",
       ],
@@ -63,7 +63,7 @@ export default function PricingSection() {
       features: [
         "Everything in the Manager Plan",
         "End-to-End Marketing Strategies & quarterly playbooks",
-        "Multi-channel Social Media Posts (X, LinkedIn, Meta)",
+        "Multi-channel Social Media Posts (X, Meta, Reddit)",
         "Video Generation: UGC scripts, hooks & ad clips",
         "Campaign Management: plan, create & launch campaigns",
         "AI-Driven Brand Growth Strategy & market positioning",

@@ -46,7 +46,7 @@ export default function Footer() {
               Writer Agent
             </Link>
             <Link href="/integrations" className="text-xs hover:text-[#ffffff] transition-colors">
-              16+ Integrations
+              Integrations
             </Link>
           </div>
 
@@ -101,9 +101,6 @@ export default function Footer() {
           <div className="flex items-center gap-6">
             <a href="#" className="hover:text-[#ffffff] transition-colors">
               Twitter / X
-            </a>
-            <a href="#" className="hover:text-[#ffffff] transition-colors">
-              LinkedIn
             </a>
             <a href="#" className="hover:text-[#ffffff] transition-colors">
               GitHub

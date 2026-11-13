@@ -30,10 +30,9 @@ export default function PublishStackSection() {
           <div className="lg:col-span-6 flex flex-col justify-center">
             <p className="text-base sm:text-lg text-[#a1a1aa] leading-relaxed">
               Okiza reads your site, Search Console and Analytics, then hands back
-              ready work — GEO and SEO fixes, articles, UGC videos, X and LinkedIn
+              ready work — GEO and SEO fixes, articles, UGC videos, and X
               posts. Approve it, and it publishes to WordPress, Webflow, Framer,
-              Wix, HubSpot, Sanity, GitHub, LinkedIn, X (Twitter), TikTok,
-              Instagram, Facebook.
+              Wix, HubSpot, Sanity, GitHub, X (Twitter), Instagram, Facebook.
             </p>
 
             <div className="mt-6 flex items-center gap-4">
@@ -41,7 +40,7 @@ export default function PublishStackSection() {
                 href="/integrations"
                 className="inline-flex items-center gap-1.5 text-xs font-semibold text-white hover:text-[#d4d4d8] transition-colors"
               >
-                <span>View all 16+ native integrations</span>
+                <span>Explore connected stack architecture</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>

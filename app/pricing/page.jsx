@@ -67,7 +67,7 @@ export default function PricingPage() {
         "Quora Integration: external discussion & brand visibility",
         "Medium & External Publishing: content distribution",
         "Backlinking: third-party posting & backlinking strategy",
-        "LinkedIn Content: social content distribution & carousels",
+        "Executive Content: authority distribution & thought leadership",
         "Brand visibility beyond your own website",
         "Priority analytics refresh & ranking alerts",
       ],
@@ -122,7 +122,7 @@ export default function PricingPage() {
         { name: "Quora Discussions & Brand Answers", intern: false, manager: true, cmo: true },
         { name: "Medium & External Distribution", intern: false, manager: true, cmo: true },
         { name: "Backlinking & Authority Building Strategy", intern: false, manager: true, cmo: true },
-        { name: "LinkedIn Content Distribution", intern: false, manager: true, cmo: true },
+        { name: "Executive Content Distribution", intern: false, manager: true, cmo: true },
       ],
     },
     {

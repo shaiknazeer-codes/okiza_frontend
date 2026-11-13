@@ -75,7 +75,7 @@ const faqs = [
     category: "integrations",
     question: "Which content management systems (CMS) and platforms are supported?",
     answer:
-      "Okiza natively connects with WordPress, Webflow, Framer, Wix, HubSpot, Sanity, Shopify, GitHub, Google Search Console, Google Analytics 4, LinkedIn, X (Twitter), TikTok, Facebook, WhatsApp, and Telegram. We also provide full REST APIs and Webhook endpoints for custom stacks.",
+      "Okiza natively connects with WordPress, Webflow, Framer, Wix, HubSpot, Sanity, Shopify, GitHub, Google Search Console, Google Analytics 4, X (Twitter), Facebook, WhatsApp, and Telegram. We also provide full REST APIs and Webhook endpoints for custom stacks.",
   },
   {
     category: "safety",
