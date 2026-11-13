@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, Fragment } from "react";
 import Link from "next/link";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
@@ -324,81 +324,93 @@ export default function PricingPage() {
 
           <div className="border border-[#262626] rounded-2xl overflow-hidden bg-[#111111]/80 backdrop-blur-md shadow-2xl">
             <div className="overflow-x-auto">
-              <table className="w-full text-left border-collapse text-xs md:text-sm">
+              <table className="w-full text-left border-collapse text-xs md:text-sm table-fixed">
                 <thead>
                   <tr className="border-b border-[#262626] bg-[#141414]">
-                    <th className="p-4 md:p-5 font-semibold text-white w-2/5">
+                    <th className="p-4 md:p-5 font-semibold text-white w-[40%]">
                       Features & Capabilities
                     </th>
-                    <th className="p-4 md:p-5 font-semibold text-white text-center w-1/5">
+                    <th className="p-4 md:p-5 font-semibold text-white text-center w-[20%]">
                       Intern Plan
                     </th>
-                    <th className="p-4 md:p-5 font-semibold text-white text-center w-1/5 bg-white/[0.03]">
+                    <th className="p-4 md:p-5 font-semibold text-white text-center w-[20%] bg-white/[0.03]">
                       Manager Plan
                     </th>
-                    <th className="p-4 md:p-5 font-semibold text-white text-center w-1/5">
+                    <th className="p-4 md:p-5 font-semibold text-white text-center w-[20%]">
                       CMO Plan
                     </th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-[#262626]/70">
                   {comparisonFeatures.map((cat, catIdx) => (
-                    <tbody key={catIdx} className="divide-y divide-[#262626]/40">
-                      <tr className="bg-[#18181b]/50">
+                    <Fragment key={catIdx}>
+                      <tr className="bg-[#18181b]/70 border-y border-[#262626]">
                         <td
                           colSpan={4}
-                          className="px-4 py-3 font-mono text-xs font-bold uppercase tracking-wider text-[#a1a1aa]"
+                          className="px-4 md:px-5 py-3 font-mono text-xs font-bold uppercase tracking-wider text-[#a1a1aa]"
                         >
                           {cat.category}
                         </td>
                       </tr>
                       {cat.items.map((item, itemIdx) => (
-                        <tr key={itemIdx} className="hover:bg-white/[0.02]">
-                          <td className="p-4 text-[#d4d4d8] font-medium">
+                        <tr key={itemIdx} className="hover:bg-white/[0.02] transition-colors">
+                          <td className="p-4 md:p-5 text-[#d4d4d8] font-medium">
                             {item.name}
                           </td>
-                          <td className="p-4 text-center">
+                          <td className="p-4 md:p-5 text-center">
                             {typeof item.intern === "boolean" ? (
                               item.intern ? (
-                                <Check className="w-4 h-4 text-green-400 mx-auto" />
+                                <div className="flex justify-center">
+                                  <div className="w-5 h-5 rounded-full bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center">
+                                    <Check className="w-3.5 h-3.5 text-emerald-400 stroke-[2.5]" />
+                                  </div>
+                                </div>
                               ) : (
-                                <span className="text-[#52525b]">—</span>
+                                <span className="text-[#3f3f46] text-base select-none">—</span>
                               )
                             ) : (
-                              <span className="text-xs text-white font-mono">
+                              <span className="text-xs text-white font-mono font-medium">
                                 {item.intern}
                               </span>
                             )}
                           </td>
-                          <td className="p-4 text-center bg-white/[0.03]">
+                          <td className="p-4 md:p-5 text-center bg-white/[0.03]">
                             {typeof item.manager === "boolean" ? (
                               item.manager ? (
-                                <Check className="w-4 h-4 text-green-400 mx-auto" />
+                                <div className="flex justify-center">
+                                  <div className="w-5 h-5 rounded-full bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center">
+                                    <Check className="w-3.5 h-3.5 text-emerald-400 stroke-[2.5]" />
+                                  </div>
+                                </div>
                               ) : (
-                                <span className="text-[#52525b]">—</span>
+                                <span className="text-[#3f3f46] text-base select-none">—</span>
                               )
                             ) : (
-                              <span className="text-xs text-white font-mono">
+                              <span className="text-xs text-white font-mono font-medium">
                                 {item.manager}
                               </span>
                             )}
                           </td>
-                          <td className="p-4 text-center">
+                          <td className="p-4 md:p-5 text-center">
                             {typeof item.cmo === "boolean" ? (
                               item.cmo ? (
-                                <Check className="w-4 h-4 text-green-400 mx-auto" />
+                                <div className="flex justify-center">
+                                  <div className="w-5 h-5 rounded-full bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center">
+                                    <Check className="w-3.5 h-3.5 text-emerald-400 stroke-[2.5]" />
+                                  </div>
+                                </div>
                               ) : (
-                                <span className="text-[#52525b]">—</span>
+                                <span className="text-[#3f3f46] text-base select-none">—</span>
                               )
                             ) : (
-                              <span className="text-xs text-white font-mono">
+                              <span className="text-xs text-white font-mono font-medium">
                                 {item.cmo}
                               </span>
                             )}
                           </td>
                         </tr>
                       ))}
-                    </tbody>
+                    </Fragment>
                   ))}
                 </tbody>
               </table>

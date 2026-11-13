@@ -177,8 +177,8 @@ const verticalData = {
         desc: "Drafts and schedules weekly social posts and Google Business updates that keep your company visible and trusted.",
       },
       {
-        title: "1-Click Approvals via WhatsApp",
-        desc: "Review daily recommendations and publish articles or updates directly from your phone in under 30 seconds.",
+        title: "1-Click Approvals via Dashboard",
+        desc: "Review daily recommendations and publish articles or updates directly from your dashboard in under 30 seconds.",
       },
     ],
   },

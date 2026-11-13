@@ -45,7 +45,7 @@ const faqs = [
     category: "general",
     question: "Do I have to approve actions or does Okiza act completely autonomously?",
     answer:
-      "You stay in full control. By default, Okiza operates in 'Human-in-the-Loop' mode: recommendations, articles, code PRs, and social posts are prepared and queued for your 1-click approval via dashboard, Telegram, or WhatsApp. You can also configure trusted agents to auto-publish on preset schedules once you verify their brand voice alignment.",
+      "You stay in full control. By default, Okiza operates in 'Human-in-the-Loop' mode: recommendations, articles, code PRs, and social posts are prepared and queued for your 1-click approval via the dashboard. You can also configure trusted agents to auto-publish on preset schedules once you verify their brand voice alignment.",
   },
   {
     category: "agents",
@@ -75,7 +75,7 @@ const faqs = [
     category: "integrations",
     question: "Which content management systems (CMS) and platforms are supported?",
     answer:
-      "Okiza natively connects with WordPress, Webflow, Framer, Wix, HubSpot, Sanity, Shopify, GitHub, Google Search Console, Google Analytics 4, X (Twitter), Facebook, WhatsApp, and Telegram. We also provide full REST APIs and Webhook endpoints for custom stacks.",
+      "Okiza natively connects with WordPress, Webflow, Framer, Wix, HubSpot, GitHub, Google Search Console, Google Analytics 4, and X (Twitter). We also provide full REST APIs and Webhook endpoints for custom stacks.",
   },
   {
     category: "safety",

@@ -32,7 +32,7 @@ export default function PublishStackSection() {
               Okiza reads your site, Search Console and Analytics, then hands back
               ready work — GEO and SEO fixes, articles, UGC videos, and X
               posts. Approve it, and it publishes to WordPress, Webflow, Framer,
-              Wix, HubSpot, Sanity, GitHub, X (Twitter), Instagram, Facebook.
+              Wix, HubSpot, GitHub, and X (Twitter).
             </p>
 
             <div className="mt-6 flex items-center gap-4">

@@ -55,7 +55,7 @@ export default function WriterAgentPage() {
       targetKeyword: "GEO optimization guide",
       serpPotential: "#1 rank target",
       status: "Ready to Publish",
-      cms: "Framer & Sanity",
+      cms: "Framer & Webflow",
       excerpt:
         "When buyers ask Perplexity or ChatGPT for the best software in your category, why are legacy rivals cited first? Here is the exact data structure, entity schema, and authority signal loop needed to dominate LLM citations.",
     },
@@ -72,13 +72,13 @@ export default function WriterAgentPage() {
     },
   ];
 
-  const cmsIntegrations = ["WordPress", "Webflow", "Framer", "Wix", "Sanity"];
+  const cmsIntegrations = ["WordPress", "Webflow", "Framer", "Wix"];
 
   const statItems = [
     { label: "Content Speedup", value: "10x" },
     { label: "Reader Retention", value: "74%" },
     { label: "Articles Pushed / Mo", value: "12+" },
-    { label: "CMS 1-Click Sync", value: "5 Platforms" },
+    { label: "CMS 1-Click Sync", value: "4 Platforms" },
   ];
 
   return (
@@ -192,7 +192,7 @@ export default function WriterAgentPage() {
                   Okiza’s AI Writer Agent runs your entire organic editorial calendar autonomously. It doesn&apos;t just spit out generic ChatGPT paragraphs—it calibrates against your ICP, positioning documents, and style guides to produce publication-ready long-form articles.
                 </p>
                 <p>
-                  Every article includes keyword-targeted headings, technical schema, structured tables, and conversion callouts. Once approved, the agent pushes directly to WordPress, Webflow, Framer, Wix, or Sanity with one click.
+                  Every article includes keyword-targeted headings, technical schema, structured tables, and conversion callouts. Once approved, the agent pushes directly to WordPress, Webflow, Framer, or Wix with one click.
                 </p>
                 <div className="p-5 rounded-2xl bg-[#141211] border border-[#2e2a28] text-white">
                   <p className="text-sm font-medium leading-relaxed flex items-start gap-2.5">

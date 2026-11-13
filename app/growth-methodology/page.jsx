@@ -51,7 +51,7 @@ export default function GrowthMethodologyPage() {
       title: "Distribute",
       subtitle: "Omnichannel Syndication",
       icon: Send,
-      desc: "Deploys verified content straight to your CMS (WordPress, Webflow, Framer, Wix, HubSpot, Sanity), opens pull requests on GitHub, and syndicates social updates without leaving your workflow.",
+      desc: "Deploys verified content straight to your CMS (WordPress, Webflow, Framer, Wix, HubSpot), opens pull requests on GitHub, and syndicates social updates without leaving your workflow.",
     },
     {
       num: "06",
