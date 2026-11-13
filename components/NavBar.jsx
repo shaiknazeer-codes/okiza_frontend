@@ -798,6 +798,14 @@ export default function NavBar() {
             Pricing
           </Link>
 
+          {/* Dashboard */}
+          <Link
+            href="/dashboard"
+            className="px-3 py-1.5 text-sm text-[#a1a1aa] hover:text-[#ffffff] font-medium transition-colors"
+          >
+            Dashboard
+          </Link>
+
           {/* Resources */}
           <div
             className="relative"
@@ -1045,6 +1053,14 @@ export default function NavBar() {
             className="text-sm text-[#ffffff] py-2 border-b border-[#262626]/50"
           >
             Pricing Plans
+          </Link>
+          <Link
+            href="/dashboard"
+            onClick={() => setMobileMenuOpen(false)}
+            className="text-sm text-[#ffffff] py-2 border-b border-[#262626]/50 flex items-center justify-between"
+          >
+            <span>Live Dashboard</span>
+            <span className="text-[10px] font-mono bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded">NEW</span>
           </Link>
           <Link
             href="/faq"
