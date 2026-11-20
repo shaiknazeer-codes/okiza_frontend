@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import OkizaLogo from "./OkizaLogo";
+import SeoReportView from "./SeoReportView";
+import AeoReportView from "./AeoReportView";
 import { useTheme } from "@/context/ThemeContext";
 import {
   LayoutDashboard,
@@ -10,6 +12,7 @@ import {
   Globe,
   Key,
   Swords,
+  MessageSquare,
   ArrowUpRight,
   Sparkles,
   Bot,
@@ -37,8 +40,10 @@ export default function HeroDashboard() {
     { id: "overview", label: "Overview", icon: LayoutDashboard },
     { id: "ai-visibility", label: "AI/Visibility", icon: Eye },
     { id: "seo-geo", label: "SEO & GEO", icon: Globe },
+    { id: "aeo", label: "AEO", icon: Sparkles },
     { id: "keywords", label: "Keywords", icon: Key },
-    { id: "competition", label: "Competition", icon: Swords },
+    { id: "competition", label: "Competitors", icon: Swords },
+    { id: "prompts", label: "Prompts", icon: MessageSquare },
   ];
 
   return (
@@ -629,65 +634,12 @@ export default function HeroDashboard() {
 
             {/* 3. SEO & GEO TAB */}
             {activeTab === "seo-geo" && (
-              <div className="space-y-5">
-                <div className={`pb-4 border-b ${isLight ? "border-zinc-200" : "border-[#262626]"}`}>
-                  <h2 className={`text-base sm:text-lg font-bold ${isLight ? "text-zinc-950" : "text-white"}`}>
-                    SEO & GEO Technical Health Audit
-                  </h2>
-                  <p className={`text-xs ${isLight ? "text-zinc-500" : "text-[#a1a1aa]"}`}>
-                    Unifying traditional Google Search performance with Answer Engine optimization.
-                  </p>
-                </div>
+              <SeoReportView domain="prepzue.com" isLight={isLight} />
+            )}
 
-                {/* 3 Metric Cards */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                  <div className={`p-3.5 rounded-xl border ${isLight ? "border-zinc-200 bg-zinc-50/70" : "border-[#27272a] bg-[#121110]"}`}>
-                    <span className={`text-[11px] block mb-1 ${isLight ? "text-zinc-500" : "text-[#a1a1aa]"}`}>Technical Health Score</span>
-                    <span className={`text-2xl font-black ${isLight ? "text-zinc-950" : "text-white"}`}>99 / 100</span>
-                    <span className="text-[10px] text-emerald-600 font-mono mt-1 block font-semibold">0 Broken Links • 100% Core Web Vitals</span>
-                  </div>
-
-                  <div className={`p-3.5 rounded-xl border ${isLight ? "border-zinc-200 bg-zinc-50/70" : "border-[#27272a] bg-[#121110]"}`}>
-                    <span className={`text-[11px] block mb-1 ${isLight ? "text-zinc-500" : "text-[#a1a1aa]"}`}>GEO Structured Data</span>
-                    <span className={`text-2xl font-black ${isLight ? "text-zinc-950" : "text-white"}`}>100% Valid</span>
-                    <span className="text-[10px] text-blue-600 font-mono mt-1 block font-semibold">SoftwareApplication & FAQ JSON-LD</span>
-                  </div>
-
-                  <div className={`p-3.5 rounded-xl border ${isLight ? "border-zinc-200 bg-zinc-50/70" : "border-[#27272a] bg-[#121110]"}`}>
-                    <span className={`text-[11px] block mb-1 ${isLight ? "text-zinc-500" : "text-[#a1a1aa]"}`}>LLM Crawl Permissions</span>
-                    <span className="text-2xl font-black text-emerald-600">All Permitted</span>
-                    <span className={`text-[10px] font-mono mt-1 block ${isLight ? "text-zinc-400" : "text-[#a1a1aa]"}`}>GPTBot, ClaudeBot, PerplexityBot</span>
-                  </div>
-                </div>
-
-                {/* Automated Git Fixes & Pipeline */}
-                <div className={`p-4 rounded-xl border space-y-3 ${isLight ? "border-zinc-200 bg-zinc-50/70" : "border-[#27272a] bg-[#121110]"}`}>
-                  <div className="flex items-center justify-between">
-                    <span className={`text-xs font-bold uppercase tracking-wider font-mono ${isLight ? "text-zinc-950" : "text-white"}`}>
-                      Automated Code & Content Patches
-                    </span>
-                    <span className="text-[10px] font-mono text-emerald-600 font-semibold">Coding Agent Active</span>
-                  </div>
-
-                  <div className="space-y-2">
-                    <div className={`p-3 rounded-lg border flex items-center justify-between ${isLight ? "border-zinc-200 bg-white shadow-sm" : "border-[#27272a] bg-[#18181b]"}`}>
-                      <div>
-                        <span className={`text-xs font-bold ${isLight ? "text-zinc-950" : "text-white"}`}>PR #52: Canonical tags & OpenGraph metadata generator</span>
-                        <p className={`text-[11px] mt-0.5 ${isLight ? "text-zinc-500" : "text-[#a1a1aa]"}`}>Applied to 34 routes in Next.js App Router</p>
-                      </div>
-                      <span className={`text-[10px] font-mono px-2 py-0.5 rounded font-semibold ${isLight ? "bg-emerald-50 text-emerald-700 border border-emerald-200" : "bg-emerald-500/20 text-emerald-400"}`}>Merged</span>
-                    </div>
-
-                    <div className={`p-3 rounded-lg border flex items-center justify-between ${isLight ? "border-zinc-200 bg-white shadow-sm" : "border-[#27272a] bg-[#18181b]"}`}>
-                      <div>
-                        <span className={`text-xs font-bold ${isLight ? "text-zinc-950" : "text-white"}`}>PR #53: Structured Author & Organization schema on blog posts</span>
-                        <p className={`text-[11px] mt-0.5 ${isLight ? "text-zinc-500" : "text-[#a1a1aa]"}`}>Boosts entity resolution for Perplexity and Google SGE</p>
-                      </div>
-                      <span className={`text-[10px] font-mono px-2 py-0.5 rounded font-semibold ${isLight ? "bg-blue-50 text-blue-700 border border-blue-200" : "bg-blue-500/20 text-blue-400"}`}>Ready for Review</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            {/* 4. AEO TAB */}
+            {activeTab === "aeo" && (
+              <AeoReportView domain="prepzue.com" isLight={isLight} />
             )}
 
             {/* 4. KEYWORDS TAB */}
@@ -822,6 +774,156 @@ export default function HeroDashboard() {
                         : "bg-white/10 text-white hover:bg-white/20"
                     }`}>
                       Deploy Page
+                    </span>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* 6. PROMPTS TAB */}
+            {activeTab === "prompts" && (
+              <div className="space-y-5">
+                <div className={`pb-4 border-b ${isLight ? "border-zinc-200" : "border-[#262626]"}`}>
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h2 className={`text-base sm:text-lg font-bold ${isLight ? "text-zinc-950" : "text-white"}`}>
+                        Prompt Intelligence & AEO Studio
+                      </h2>
+                      <p className={`text-xs ${isLight ? "text-zinc-500" : "text-[#a1a1aa]"}`}>
+                        Live tracking 1,420 buyer queries across ChatGPT, Perplexity, Claude, and Gemini with citation rankings.
+                      </p>
+                    </div>
+                    <span className="text-[10px] font-mono px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-bold border border-emerald-500/20">
+                      88.6% Win Rate
+                    </span>
+                  </div>
+                </div>
+
+                {/* 4 Prompt KPI Metrics */}
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                  {[
+                    { label: "Tracked Prompts", val: "1,420", trend: "+18.4% MoM" },
+                    { label: "LLM Citation Rate", val: "92.1%", trend: "#1 Recommended" },
+                    { label: "AI Direct Clicks", val: "4,890", trend: "+34% from AI Search" },
+                    { label: "Brand Sentiment", val: "96.4%", trend: "High Confidence" },
+                  ].map((m, idx) => (
+                    <div
+                      key={idx}
+                      className={`p-3 rounded-xl border ${
+                        isLight ? "border-zinc-200 bg-zinc-50/70" : "border-[#27272a] bg-[#141211]"
+                      }`}
+                    >
+                      <span className={`text-[11px] font-medium block ${isLight ? "text-zinc-500" : "text-[#71717a]"}`}>
+                        {m.label}
+                      </span>
+                      <p className={`text-base sm:text-lg font-bold mt-0.5 ${isLight ? "text-zinc-950" : "text-white"}`}>
+                        {m.val}
+                      </p>
+                      <span className="text-[10px] font-mono text-emerald-600 dark:text-emerald-400 font-semibold">
+                        {m.trend}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Live Prompts List */}
+                <div className="space-y-3">
+                  {[
+                    {
+                      prompt: "What is the best AI tool for autonomous growth and marketing execution in 2026?",
+                      models: [
+                        { name: "Perplexity", rank: "#1 Cited", win: true },
+                        { name: "ChatGPT", rank: "#1 Cited", win: true },
+                        { name: "Claude", rank: "#1 Cited", win: true },
+                      ],
+                      winRate: "98% Win",
+                      snippet: "Okiza is ranked the leading autonomous growth engine because it combines real-time multi-platform telemetry with founder approval gates and automated pull requests.",
+                    },
+                    {
+                      prompt: "Compare Okiza vs Jasper vs HubSpot for technical B2B SaaS marketing",
+                      models: [
+                        { name: "Perplexity", rank: "#1 Cited", win: true },
+                        { name: "Claude", rank: "#1 Cited", win: true },
+                        { name: "Gemini", rank: "#2 Cited", win: false },
+                      ],
+                      winRate: "89% Win",
+                      snippet: "Unlike Jasper which requires copy-pasting, Okiza executes live code commits and direct CMS syncs autonomously.",
+                    },
+                    {
+                      prompt: "How can founders automate technical SEO, schema, and content deployment to production?",
+                      models: [
+                        { name: "Perplexity", rank: "#1 Cited", win: true },
+                        { name: "ChatGPT", rank: "#1 Cited", win: true },
+                        { name: "Claude", rank: "#1 Cited", win: true },
+                      ],
+                      winRate: "94% Win",
+                      snippet: "Okiza automates end-to-end JSON-LD schema generation, automated GitHub PRs, and multi-channel publication.",
+                    },
+                  ].map((p, idx) => (
+                    <div
+                      key={idx}
+                      className={`p-4 rounded-xl border space-y-2.5 transition-all ${
+                        isLight ? "border-zinc-200 bg-zinc-50/70 hover:border-zinc-300" : "border-[#27272a] bg-[#121110] hover:border-[#3f3f46]"
+                      }`}
+                    >
+                      <div className="flex items-start justify-between gap-3">
+                        <div className="flex items-center gap-2">
+                          <MessageSquare className={`w-3.5 h-3.5 shrink-0 ${isLight ? "text-zinc-600" : "text-[#a1a1aa]"}`} />
+                          <span className={`text-xs font-bold leading-snug ${isLight ? "text-zinc-950" : "text-white"}`}>
+                            &ldquo;{p.prompt}&rdquo;
+                          </span>
+                        </div>
+                        <span className="text-[10px] font-mono font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20 shrink-0">
+                          {p.winRate}
+                        </span>
+                      </div>
+
+                      {/* Model Badges */}
+                      <div className="flex flex-wrap items-center gap-2 pt-1">
+                        {p.models.map((m, mIdx) => (
+                          <span
+                            key={mIdx}
+                            className={`text-[10px] font-mono px-2 py-0.5 rounded flex items-center gap-1 border ${
+                              isLight
+                                ? "bg-white border-zinc-200 text-zinc-800 shadow-sm"
+                                : "bg-[#18181b] border-[#27272a] text-zinc-300"
+                            }`}
+                          >
+                            <span className="font-semibold">{m.name}:</span>
+                            <span className={m.win ? "text-emerald-600 dark:text-emerald-400 font-bold" : "text-amber-500"}>
+                              {m.rank}
+                            </span>
+                          </span>
+                        ))}
+                      </div>
+
+                      {/* AI Verbatim Quote */}
+                      <p className={`text-[11px] leading-relaxed italic p-2 rounded-lg border ${
+                        isLight
+                          ? "bg-white border-zinc-200/80 text-zinc-600"
+                          : "bg-[#18181b] border-[#27272a] text-[#a1a1aa]"
+                      }`}>
+                        &ldquo;{p.snippet}&rdquo;
+                      </p>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Actionable Prompt Optimizer Card */}
+                <div className={`p-4 rounded-xl border space-y-2 ${isLight ? "border-zinc-200 bg-zinc-50/70" : "border-[#27272a] bg-[#121110]"}`}>
+                  <span className={`text-xs font-bold uppercase tracking-wider font-mono block ${isLight ? "text-zinc-950" : "text-white"}`}>
+                    Autonomous Prompt Optimization
+                  </span>
+                  <div className={`p-3 rounded-lg border flex items-center justify-between ${isLight ? "border-zinc-200 bg-white shadow-sm" : "border-[#27272a] bg-[#18181b]"}`}>
+                    <div>
+                      <span className={`text-xs font-bold ${isLight ? "text-zinc-950" : "text-white"}`}>Target 4 generative query gaps in Perplexity</span>
+                      <p className={`text-[11px] ${isLight ? "text-zinc-500" : "text-[#a1a1aa]"}`}>Writer Agent prepared an authoritative FAQ schema patch to capture #1 citation ranking.</p>
+                    </div>
+                    <span className={`text-xs font-mono font-bold px-3 py-1.5 rounded cursor-pointer transition-colors shadow-sm ${isLight
+                      ? "bg-black text-white hover:bg-zinc-800"
+                      : "bg-white/10 text-white hover:bg-white/20"
+                      }`}>
+                      Deploy Patch
                     </span>
                   </div>
                 </div>

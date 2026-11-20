@@ -114,7 +114,7 @@ export default function OkizaHeroSection() {
                 }`}
             />
             <Link
-              href="/pricing"
+              href={website.trim() ? `/dashboard?domain=${encodeURIComponent(website.trim())}` : "/dashboard"}
               className={`px-5 py-2.5 rounded-xl font-semibold text-sm transition-all shrink-0 flex items-center gap-1.5 shadow-sm ${isLight
                 ? "bg-[#18181b] text-[#ffffff] hover:bg-black"
                 : "bg-white text-black hover:bg-[#e4e4e7]"

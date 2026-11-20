@@ -9,6 +9,22 @@ const ThemeContext = createContext({
   mounted: false,
 });
 
+function applyThemeToDocument(t) {
+  if (typeof document === "undefined") return;
+  const root = document.documentElement;
+  if (t === "light") {
+    root.classList.remove("dark");
+    root.classList.add("light");
+    root.setAttribute("data-theme", "light");
+    root.style.colorScheme = "light";
+  } else {
+    root.classList.remove("light");
+    root.classList.add("dark");
+    root.setAttribute("data-theme", "dark");
+    root.style.colorScheme = "dark";
+  }
+}
+
 export function ThemeProvider({ children }) {
   const [theme, setTheme] = useState("dark");
   const [mounted, setMounted] = useState(false);
@@ -17,39 +33,20 @@ export function ThemeProvider({ children }) {
     try {
       const savedTheme = localStorage.getItem("okiza-theme");
       if (savedTheme === "light" || savedTheme === "dark") {
+        applyThemeToDocument(savedTheme);
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setTheme(savedTheme);
-        applyTheme(savedTheme);
-      } else {
-        applyTheme("dark");
       }
-    } catch (e) {
-      applyTheme("dark");
-    }
+    } catch (e) {}
     setMounted(true);
   }, []);
-
-  const applyTheme = (t) => {
-    if (typeof document === "undefined") return;
-    const root = document.documentElement;
-    if (t === "light") {
-      root.classList.remove("dark");
-      root.classList.add("light");
-      root.setAttribute("data-theme", "light");
-      root.style.colorScheme = "light";
-    } else {
-      root.classList.remove("light");
-      root.classList.add("dark");
-      root.setAttribute("data-theme", "dark");
-      root.style.colorScheme = "dark";
-    }
-  };
 
   const updateTheme = (newTheme) => {
     setTheme(newTheme);
     try {
       localStorage.setItem("okiza-theme", newTheme);
     } catch (e) {}
-    applyTheme(newTheme);
+    applyThemeToDocument(newTheme);
   };
 
   const toggleTheme = () => {
