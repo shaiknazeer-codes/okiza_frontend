@@ -129,6 +129,19 @@ export default function DashboardSidebar({ activeScreen, onSelectScreen }) {
           </span>
         </div>
 
+        {/* Workspace Dropdown Button */}
+        <button
+          onClick={() => onSelectScreen("overview")}
+          className="w-full flex items-center gap-2.5 px-3 py-2 rounded-xl bg-[#141416] hover:bg-[#1a1a1e] border border-[#27272a] text-white transition-all text-left cursor-pointer group"
+        >
+          <div className="w-4 h-4 rounded-full border border-[#52525b] flex items-center justify-center text-[10px] font-mono text-[#a1a1aa] group-hover:border-white transition-colors">
+            O
+          </div>
+          <span className="font-medium text-xs text-white truncate flex-1">
+            Demo workspace
+          </span>
+        </button>
+
         {/* Navigation Groups */}
         <nav className="space-y-4 pt-1">
           {navGroups.map((grp) => (
